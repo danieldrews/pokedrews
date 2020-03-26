@@ -1,16 +1,15 @@
-<div class="content">
-    <ul class="cards">
-        <li class="cards__item" *ngFor="let poke of pokemons">
-            <div class="card">
-                <div class="card__image">
-                    <img class="daniel"
-                    src="{{ getPokemonImghUrl(poke.url) }}">
+<div class="container">
+    <div class="cards">
+        <div class="card" *ngFor="let poke of pokemons">
+            <div class="card-content">
+                <div class="card-content-title">{{ poke.name }}</div>
+                <div class="card-content-image">
+                    <img src="{{ poke.imgUrl }}">
                 </div>
-                <div class="card__content">
-                    <div class="card__title">{{ poke.name }}</div>
-                    <p class="card__text">{{ poke.url }}</p>
+                <div class="card-content-text">
+                    <p></p>
                 </div>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>

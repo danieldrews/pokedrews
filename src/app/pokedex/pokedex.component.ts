@@ -16,13 +16,9 @@ export class PokedexComponent implements OnInit {
     private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe(data => { this.pokemons = data.pokemons })
-  }
-
-  getPokemonImghUrl(url: string): string {
-    let arrUrl = url.split('/')
-    let id = arrUrl[arrUrl.length - 2]
-    return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${ id.padStart(3,'0') }.png`
+    this.activatedRoute.data.subscribe(data => { 
+      this.pokemons = data.pokemons 
+    })
   }
 
 }
