@@ -2,12 +2,15 @@
     <div class="cards">
         <div class="card" *ngFor="let poke of pokemons">
             <div class="card-content">
-                <div class="card-content-title">{{ poke.name }}</div>
+                <div class="card-content-title">
+                    <span>{{ poke.name }}</span>
+                    <span>#{{ poke.padId }}</span>
+                </div>
                 <div class="card-content-image">
                     <img src="{{ poke.imgUrl }}">
                 </div>
-                <div class="card-content-text">
-                    <p></p>
+                <div class="card-content-bottom">
+                    <!-- <button class="btn">About</button> -->
                 </div>
             </div>
         </div>

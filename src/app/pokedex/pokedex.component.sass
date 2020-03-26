@@ -1,3 +1,5 @@
+$gray-light: #cccccc
+$gray-dark: #696969
 $gray-lighter: #ececec
 $gray-lightest: lighten($gray-lighter,4%)
 
@@ -25,6 +27,7 @@ $gray-lightest: lighten($gray-lighter,4%)
             filter: contrast(100%)
         .card-content-image img
             transform: scale(1.2)
+            padding-bottom: -1rem
 
 .card-content  
     padding: 1rem
@@ -32,21 +35,46 @@ $gray-lightest: lighten($gray-lighter,4%)
     background-color: $gray-lightest
     border-radius: 0.25rem
     box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25)
+    &:hover
+        cursor: pointer
+
+.card-content-title
+  display: flex
+  justify-content: space-between
+  color: $gray-dark
+  font-size: 1.25rem
+  font-weight: 300
+  letter-spacing: 2px
+  text-transform: uppercase
 
 .card-content-image
     display: flex
-    justify-content: flex-end
+    justify-content: center
     filter: contrast(70%)
     transition: filter 0.5s cubic-bezier(.43,.41,.22,.91)
     img
         transition: all .2s ease-in-out
+        position: relative
+        z-index: 35
 
-.card-content-title
+.card-content-bottom
+    display: flex
+    justify-content: center
     font-size: 1.25rem
     font-weight: 300
     letter-spacing: 2px
     text-transform: uppercase
+    position: relative
+    z-index: 40
+    button
+        background-color: white
+        border: 1px solid $gray-light
+        color: $gray-dark
+        width: 215px
+        height: 34px
+        &:hover
+            background-color: $gray-lighter
 
 .card-content-text
     font-size: 0.875rem
-    line-height: 1.5
+    line-height: 1.5  
