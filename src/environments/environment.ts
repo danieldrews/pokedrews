@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  pokeApiUrl: 'https://pokeapi.co/api/v2/'
+  pokeApiUrl: 'https://pokeapi.co/api/v2/',
+  itemLimit: 20
 };
 
 /*

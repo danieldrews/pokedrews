@@ -18,11 +18,11 @@ export class PokemonService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPaginated(offset: number = 0, limit: number = 20): Observable<Pokemon[]> {
+  getPaginated(offset: number = 0, limit: number = environment.itemLimit): Promise<Pokemon[]> {
     return this.httpGet(`pokemon/?offset=${ offset }&limit=${ limit }`)
       .pipe(
         tap(content => console.log(content)),
-        map(data => this.mapGet(data)))
+        map(data => this.mapGet(data))).toPromise()
   }
 
   get(id: number): Observable<Pokemon> {

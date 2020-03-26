@@ -1,0 +1,193 @@
+warning: LF will be replaced by CRLF in package-lock.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/app.module.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/core/pokeapi/pokemon.service.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/pokedex/pokedex.component.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/app/pokedex/pokedex.component.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/environments/environment.prod.ts.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/environments/environment.ts.
+The file will have its original line endings in your working directory
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex d072732..129987a 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -7068,6 +7068,14 @@[m
+       "integrity": "sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==",[m
+       "dev": true[m
+     },[m
+[32m+[m[32m    "ngx-infinite-scroll": {[m
+[32m+[m[32m      "version": "8.0.1",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/ngx-infinite-scroll/-/ngx-infinite-scroll-8.0.1.tgz",[m
+[32m+[m[32m      "integrity": "sha512-YpgkTPDNT7UCEp0GRX178V1nF+M2slCPJ2TX3CpvPZb5AR99JYwj/fNivcue5lN51oUaTySEG27qjVU73vKhjw==",[m
+[32m+[m[32m      "requires": {[m
+[32m+[m[32m        "opencollective-postinstall": "^2.0.2"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+     "nice-try": {[m
+       "version": "1.0.5",[m
+       "resolved": "https://registry.npmjs.org/nice-try/-/nice-try-1.0.5.tgz",[m
+[36m@@ -7474,6 +7482,11 @@[m
+         "is-wsl": "^2.1.0"[m
+       }[m
+     },[m
+[32m+[m[32m    "opencollective-postinstall": {[m
+[32m+[m[32m      "version": "2.0.2",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz",[m
+[32m+[m[32m      "integrity": "sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw=="[m
+[32m+[m[32m    },[m
+     "opn": {[m
+       "version": "5.5.0",[m
+       "resolved": "https://registry.npmjs.org/opn/-/opn-5.5.0.tgz",[m
+[1mdiff --git a/package.json b/package.json[m
+[1mindex 7f6a5bc..dfaf271 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -19,6 +19,7 @@[m
+     "@angular/platform-browser": "~9.0.7",[m
+     "@angular/platform-browser-dynamic": "~9.0.7",[m
+     "@angular/router": "~9.0.7",[m
+[32m+[m[32m    "ngx-infinite-scroll": "^8.0.1",[m
+     "rxjs": "~6.5.4",[m
+     "tslib": "^1.10.0",[m
+     "zone.js": "~0.10.2"[m
+[1mdiff --git a/src/app/app.module.ts b/src/app/app.module.ts[m
+[1mindex 4524224..ed49816 100644[m
+[1m--- a/src/app/app.module.ts[m
+[1m+++ b/src/app/app.module.ts[m
+[36m@@ -1,12 +1,14 @@[m
+ import { BrowserModule } from '@angular/platform-browser';[m
+ import { NgModule } from '@angular/core';[m
+[31m-[m
+ import { AppRoutingModule } from './app-routing.module';[m
+[32m+[m[32mimport { HttpClientModule } from '@angular/common/http';[m
+[32m+[m[32mimport { InfiniteScrollModule } from 'ngx-infinite-scroll';[m
+[32m+[m
+ import { AppComponent } from './app.component';[m
+ [m
+[31m-import { HttpClientModule } from '@angular/common/http';[m
+ import { PokedexComponent } from './pokedex/pokedex.component';[m
+ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';[m
+[32m+[m
+ @NgModule({[m
+   declarations: [[m
+     AppComponent,[m
+[36m@@ -16,9 +18,10 @@[m [mimport { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen[m
+   imports: [[m
+     BrowserModule,[m
+     AppRoutingModule,[m
+[31m-    HttpClientModule[m
+[32m+[m[32m    HttpClientModule,[m
+[32m+[m[32m    InfiniteScrollModule[m
+   ],[m
+   providers: [],[m
+   bootstrap: [AppComponent][m
+ })[m
+[31m-export class AppModule { }[m
+[32m+[m[32mexport class AppModule { }[m
+\ No newline at end of file[m
+[1mdiff --git a/src/app/core/pokeapi/pokemon.service.ts b/src/app/core/pokeapi/pokemon.service.ts[m
+[1mindex fe21432..6a23705 100644[m
+[1m--- a/src/app/core/pokeapi/pokemon.service.ts[m
+[1m+++ b/src/app/core/pokeapi/pokemon.service.ts[m
+[36m@@ -18,11 +18,11 @@[m [mexport class PokemonService {[m
+ [m
+   constructor(private httpClient: HttpClient) { }[m
+ [m
+[31m-  getPaginated(offset: number = 0, limit: number = 20): Observable<Pokemon[]> {[m
+[32m+[m[32m  getPaginated(offset: number = 0, limit: number = environment.itemLimit): Promise<Pokemon[]> {[m
+     return this.httpGet(`pokemon/?offset=${ offset }&limit=${ limit }`)[m
+       .pipe([m
+         tap(content => console.log(content)),[m
+[31m-        map(data => this.mapGet(data)))[m
+[32m+[m[32m        map(data => this.mapGet(data))).toPromise()[m
+   }[m
+ [m
+   get(id: number): Observable<Pokemon> {[m
+[1mdiff --git a/src/app/pokedex/pokedex.component.html b/src/app/pokedex/pokedex.component.html[m
+[1mindex 2ced0ee..9c9c199 100644[m
+[1m--- a/src/app/pokedex/pokedex.component.html[m
+[1m+++ b/src/app/pokedex/pokedex.component.html[m
+[36m@@ -1,4 +1,7 @@[m
+[31m-<div class="container">[m
+[32m+[m[32m<div class="container"[m[41m [m
+[32m+[m[32m    infiniteScroll[m
+[32m+[m[32m    [infiniteScrollDistance]="1"[m
+[32m+[m[32m    (scrolled)="onScroll()">[m
+     <div class="cards">[m
+         <div class="card" *ngFor="let poke of pokemons">[m
+             <div class="card-content" (click)="openPokemonDetail(poke)">[m
+[1mdiff --git a/src/app/pokedex/pokedex.component.sass b/src/app/pokedex/pokedex.component.sass[m
+[1mindex ab0b454..8151065 100644[m
+[1m--- a/src/app/pokedex/pokedex.component.sass[m
+[1m+++ b/src/app/pokedex/pokedex.component.sass[m
+[36m@@ -33,6 +33,7 @@[m [m$gray-lightest: lighten($gray-lighter,4%)[m
+     padding: 1rem[m
+     box-sizing: border-box[m
+     background-color: $gray-lightest[m
+[32m+[m[32m    border: 1px solid #ececec[m
+     border-radius: 0.25rem[m
+     box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25)[m
+     &:hover[m
+[1mdiff --git a/src/app/pokedex/pokedex.component.ts b/src/app/pokedex/pokedex.component.ts[m
+[1mindex fd35646..1f3d416 100644[m
+[1m--- a/src/app/pokedex/pokedex.component.ts[m
+[1m+++ b/src/app/pokedex/pokedex.component.ts[m
+[36m@@ -2,6 +2,7 @@[m [mimport { Component, OnInit } from '@angular/core';[m
+ import { PokemonService } from '../core/pokeapi/pokemon.service';[m
+ import { ActivatedRoute } from '@angular/router';[m
+ import { RouteService } from '../core/services/route.service';[m
+[32m+[m[32mimport { environment } from 'src/environments/environment';[m
+ [m
+ @Component({[m
+   selector: 'app-pokedex',[m
+[36m@@ -10,6 +11,8 @@[m [mimport { RouteService } from '../core/services/route.service';[m
+ })[m
+ export class PokedexComponent implements OnInit {[m
+ [m
+[32m+[m[32m  offset = 0[m
+[32m+[m
+   pokemons: [][m
+ [m
+   constructor([m
+[36m@@ -27,4 +30,9 @@[m [mexport class PokedexComponent implements OnInit {[m
+     this.routeService.goTo('pokemon', pokemon.id)[m
+   }[m
+ [m
+[32m+[m[32m  onScroll() {[m
+[32m+[m[32m    this.offset += environment.itemLimit[m
+[32m+[m[32m    this.pokemonService.getPaginated(this.offset).then(pokemons => Array.prototype.push.apply(this.pokemons, pokemons))[m
+[32m+[m[32m  }[m
+[32m+[m
+ }[m
+[1mdiff --git a/src/environments/environment.prod.ts b/src/environments/environment.prod.ts[m
+[1mindex a7563c2..cb733fa 100644[m
+[1m--- a/src/environments/environment.prod.ts[m
+[1m+++ b/src/environments/environment.prod.ts[m
+[36m@@ -1,4 +1,5 @@[m
+ export const environment = {[m
+   production: true,[m
+[31m-  pokeApiUrl: 'https://pokeapi.co/api/v2/'[m
+[32m+[m[32m  pokeApiUrl: 'https://pokeapi.co/api/v2/',[m
+[32m+[m[32m  itemLimit: 20[m
+ };[m
+[1mdiff --git a/src/environments/environment.ts b/src/environments/environment.ts[m
+[1mindex d71fc15..dd566b4 100644[m
+[1m--- a/src/environments/environment.ts[m
+[1m+++ b/src/environments/environment.ts[m
+[36m@@ -4,7 +4,8 @@[m
+ [m
+ export const environment = {[m
+   production: false,[m
+[31m-  pokeApiUrl: 'https://pokeapi.co/api/v2/'[m
+[32m+[m[32m  pokeApiUrl: 'https://pokeapi.co/api/v2/',[m
+[32m+[m[32m  itemLimit: 20[m
+ };[m
+ [m
+ /*[m
