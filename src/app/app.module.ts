@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { PokedexComponent } from './pokedex/pokedex.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PokedexComponent
+    PokedexComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,

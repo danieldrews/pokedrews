@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Pokemon } from './model/pokemon';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +18,18 @@ export class PokemonService {
 
   constructor(private httpClient: HttpClient) { }
 
-  get(offset: number = 0, limit: number = 20): Observable<Pokemon[]> {
+  getPaginated(offset: number = 0, limit: number = 20): Observable<Pokemon[]> {
     return this.httpGet(`pokemon/?offset=${ offset }&limit=${ limit }`)
       .pipe(
         tap(content => console.log(content)),
         map(data => this.mapGet(data)))
+  }
+
+  get(id: number): Observable<Pokemon> {
+    return this.httpGet(`pokemon/${id}`)
+    .pipe(
+      tap(content => console.log(content))
+    )
   }
 
   private mapGet(data): Array<Pokemon> {
