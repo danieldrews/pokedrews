@@ -8,13 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PokemonDetailComponent implements OnInit {
 
-  detail: any
+  pokemon: any
   
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data => { 
-      this.detail = data.pokemon
+      this.pokemon = data.pokemon
     })
   }
 

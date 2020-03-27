@@ -2,8 +2,11 @@ export class Pokemon {
     public id: number
     public padId: string
     public imgUrl: string
+    
+    //Extended data
+    public frontSpriteUrl: string
 
-    constructor(public name: string, url: string) { 
+    constructor(public name: string, url?: string) { 
         this.id = this.getIdFromUrl(url)
         this.padId = this.id.toString().padStart(3,'0')
         this.imgUrl = this.getImghUrl(this.padId)

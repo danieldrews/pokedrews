@@ -22,18 +22,25 @@ export class PokemonService {
     return this.httpGet(`pokemon/?offset=${ offset }&limit=${ limit }`)
       .pipe(
         tap(content => console.log(content)),
-        map(data => this.mapGet(data))).toPromise()
+        map(data => this.mapGetPaginated(data))).toPromise()
   }
 
-  get(id: number): Observable<Pokemon> {
+  get(id: number): Promise<Pokemon> {
     return this.httpGet(`pokemon/${id}`)
     .pipe(
-      tap(content => console.log(content))
-    )
+      tap(content => console.log(content)),
+      map(data => this.mapGet(data))
+    ).toPromise()
   }
 
-  private mapGet(data): Array<Pokemon> {
+  private mapGetPaginated(data): Array<Pokemon> {
     let results = data['results']
     return results.map(res => new Pokemon(res['name'], res['url']))
+  }
+
+  private mapGet(data): Pokemon {
+    let poke = new Pokemon(data['name'], '/'.concat(data['id'], '/'))
+    poke.frontSpriteUrl = data['sprites']['front_default']
+    return poke
   }
 }

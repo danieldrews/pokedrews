@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { CacheInterceptor } from './core/interceptors/cache-interceptor.service';
+import { PokemonNavigatorComponent } from './pokemon-navigator/pokemon-navigator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokedexComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    PokemonNavigatorComponent
   ],
   imports: [
     BrowserModule,
