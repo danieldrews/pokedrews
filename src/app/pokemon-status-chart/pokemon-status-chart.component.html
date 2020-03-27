@@ -1,0 +1,11 @@
+<div>
+    <div>
+        <div>{{hpStat.name}}</div>
+        <div>{{hpStat.base_stat.toString().concat('/',hpStat.base_stat)}}</div>
+    </div>
+    <div class="stat" *ngFor="let stat of stats">
+        <div [ngClass]="getStatClassColor(stat.name)"></div>
+        <div class="stat-name">{{stat.name}}</div>
+        <div class="stat-value">{{stat.base_stat}}</div>
+    </div>
+</div>

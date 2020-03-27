@@ -10,13 +10,15 @@ import { PokedexComponent } from './pokedex/pokedex.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { CacheInterceptor } from './core/interceptors/cache-interceptor.service';
 import { PokemonNavigatorComponent } from './pokemon-navigator/pokemon-navigator.component';
+import { PokemonStatusChartComponent } from './pokemon-status-chart/pokemon-status-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokedexComponent,
     PokemonDetailComponent,
-    PokemonNavigatorComponent
+    PokemonNavigatorComponent,
+    PokemonStatusChartComponent
   ],
   imports: [
     BrowserModule,

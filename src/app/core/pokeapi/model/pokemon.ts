@@ -5,6 +5,7 @@ export class Pokemon {
     
     //Extended data
     public frontSpriteUrl: string
+    public stats: any
 
     constructor(public name: string, url?: string) { 
         this.id = this.getIdFromUrl(url)

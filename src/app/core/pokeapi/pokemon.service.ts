@@ -39,8 +39,17 @@ export class PokemonService {
   }
 
   private mapGet(data): Pokemon {
-    let poke = new Pokemon(data['name'], '/'.concat(data['id'], '/'))
-    poke.frontSpriteUrl = data['sprites']['front_default']
-    return poke
+    let pokemon = new Pokemon(data['name'], '/'.concat(data['id'], '/'))
+    pokemon.frontSpriteUrl = data['sprites']['front_default']
+    pokemon.stats = this.flattenStats(data['stats'])
+    return pokemon
+  }
+
+  private flattenStats(stats) {
+    return stats.map(data => {
+      data['name'] = data['stat']['name']
+      delete data['stat']
+      return data
+    })
   }
 }
