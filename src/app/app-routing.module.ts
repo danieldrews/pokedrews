@@ -4,6 +4,7 @@ import { PokedexComponent } from './pokedex/pokedex.component';
 import { PokemonResolver } from './core/resolvers/pokemon.resolver';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { PokedexResolver } from './core/resolvers/pokedex.service';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,15 @@ const routes: Routes = [
     resolve: {
       pokemon: PokemonResolver
     }
-  }];
+  }, { 
+    path: '',
+    redirectTo: '/pokedex',
+    pathMatch: 'full'
+  }, { 
+    path: '**', 
+    component: PageNotFoundComponent 
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

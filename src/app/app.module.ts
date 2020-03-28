@@ -11,6 +11,7 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 import { CacheInterceptor } from './core/interceptors/cache-interceptor.service';
 import { PokemonNavigatorComponent } from './pokemon-navigator/pokemon-navigator.component';
 import { PokemonStatusChartComponent } from './pokemon-status-chart/pokemon-status-chart.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PokemonStatusChartComponent } from './pokemon-status-chart/pokemon-stat
     PokedexComponent,
     PokemonDetailComponent,
     PokemonNavigatorComponent,
-    PokemonStatusChartComponent
+    PokemonStatusChartComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
