@@ -47,8 +47,10 @@ export class PokemonService {
 
   private flattenStats(stats) {
     return stats.map(data => {
-      data['name'] = data['stat']['name']
-      delete data['stat']
+      if(data['stat']) {
+        data['name'] = data['stat']['name']
+        delete data['stat']
+      }
       return data
     })
   }

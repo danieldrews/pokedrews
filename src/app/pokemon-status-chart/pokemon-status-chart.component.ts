@@ -11,6 +11,14 @@ export class PokemonStatusChartComponent implements OnInit, OnChanges {
   stats: any
   hpStat: any
 
+  private nameColor = {
+    'speed': 'pink',
+    'special-defense': 'purple',
+    'special-attack': 'blue',
+    'defense': 'orange',
+    'attack': 'yellow'
+  }
+
   constructor() { }
 
   ngOnInit(): void {
@@ -18,8 +26,8 @@ export class PokemonStatusChartComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    let stats = changes['stats']
-    if(stats) this.load(stats.currentValue)
+    let inputStats = changes['inputStats']
+    if(inputStats) this.load(inputStats.currentValue)
   }
 
   load(inputStats) {
@@ -28,15 +36,7 @@ export class PokemonStatusChartComponent implements OnInit, OnChanges {
   }
 
   getStatClassColor(name) {
-    let nameColor = {
-      'speed': 'pink',
-      'special-defense': 'purple',
-      'special-attack': 'blue',
-      'defense': 'orange',
-      'attack': 'yellow'
-    }
-
-    return 'stat-color-'.concat(nameColor[name])
+    return 'stat-color-'.concat(this.nameColor[name])
   }
 
 }

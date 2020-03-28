@@ -35,7 +35,7 @@ export class PokemonNavigatorComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     let current = changes['current']
-    if(current) {
+    if(current && current.previousValue) {
       this.load(current.currentValue)
     }
   }
