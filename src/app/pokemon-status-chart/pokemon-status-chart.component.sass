@@ -1,0 +1,68 @@
+.container
+    background-color: #f6f6f6
+    border: 1px solid #ececec
+    border-radius: 0.25rem
+    
+.cards
+    display: flex
+    flex-flow: column
+
+.card
+    padding-bottom: 0.1rem
+
+.card-content
+    display: grid
+    grid-template-columns: 5px 120px auto
+    background-color: #666666
+    color: white
+    .stat-name
+        text-transform: capitalize
+    .stat-value
+        text-align: center
+    &.lighten
+        background-color: #808080
+
+
+.hp-spacer
+    margin: 0px 10px 0px 10px
+
+.stat-hp
+    display: flex
+    justify-content: center
+    height: 9px
+    padding-bottom: 3px
+
+.stat-hp-container
+    flex-flow: row nowrap
+    align-items: center
+    display: flex
+    border: 2px solid black
+    border-radius: 0.5rem
+    background-color: black
+    .stat-hp-text
+        color: white
+        font-size: 8px
+        margin-right: 1px
+    .stat-hp-bar
+        height:5px
+        width: 90px
+        background-color: limegreen
+    
+.stat-color
+    width: 5px
+
+.stat-color-speed
+    background:#FA92B2
+.stat-color-special-defense
+    background:#A7DB8D
+.stat-color-special-attack
+    background:#9DB7F5
+.stat-color-defense
+    background:#FAE078
+.stat-color-attack
+    background:#F5AC78
+.stat-color-hp
+    background:#FF5959
+
+.bgc-transparent
+    background-color: transparent !important

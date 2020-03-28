@@ -9,15 +9,6 @@ export class PokemonStatusChartComponent implements OnInit, OnChanges {
 
   @Input('stats') inputStats: any
   stats: any
-  hpStat: any
-
-  private nameColor = {
-    'speed': 'pink',
-    'special-defense': 'purple',
-    'special-attack': 'blue',
-    'defense': 'orange',
-    'attack': 'yellow'
-  }
 
   constructor() { }
 
@@ -32,11 +23,10 @@ export class PokemonStatusChartComponent implements OnInit, OnChanges {
 
   load(inputStats) {
     this.stats = [...inputStats]
-    this.hpStat = this.stats.pop()
+    let hpStat = this.stats.pop()
+    let hpStatBar = JSON.parse(JSON.stringify(hpStat))
+    hpStatBar.name = 'hpbar'
+    this.stats.unshift(hpStatBar)
+    this.stats.unshift(hpStat)
   }
-
-  getStatClassColor(name) {
-    return 'stat-color-'.concat(this.nameColor[name])
-  }
-
 }

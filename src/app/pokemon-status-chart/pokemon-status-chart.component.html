@@ -1,11 +1,30 @@
-<div>
-    <div>
-        <div>{{hpStat.name}}</div>
-        <div>{{hpStat.base_stat.toString().concat('/',hpStat.base_stat)}}</div>
-    </div>
-    <div class="stat" *ngFor="let stat of stats">
-        <div [ngClass]="getStatClassColor(stat.name)"></div>
-        <div class="stat-name">{{stat.name}}</div>
-        <div class="stat-value">{{stat.base_stat}}</div>
+<div class="container">
+    <div class="cards">
+        <div class="card" *ngFor="let stat of stats; let i = index">
+            <div class="card-content" [ngClass]="{'lighten': i%2 !== 0, 'bgc-transparent': stat.name === 'hpbar'}">
+                <div class="stat-color" [ngClass]="'stat-color-' + stat.name"></div>
+                <div class="stat-name">
+                    <span *ngIf="stat.name !== 'hpbar'">{{stat.name}}</span>
+                </div>
+                <div [ngSwitch]="stat.name" class="stat-value">
+                    <div *ngSwitchCase="'hp'">
+                        <div>
+                            <span>{{stat.base_stat}}</span>
+                            <span class="hp-spacer">/</span>
+                            <span>{{stat.base_stat}}</span>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="'hpbar'">
+                        <div class="stat-hp">
+                            <div class="stat-hp-container">
+                                <span class="stat-hp-text">HP</span>
+                                <div class="stat-hp-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngSwitchDefault>{{stat.base_stat}}</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
