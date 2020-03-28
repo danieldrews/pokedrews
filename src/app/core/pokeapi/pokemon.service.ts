@@ -42,6 +42,7 @@ export class PokemonService {
     let pokemon = new Pokemon(data['name'], '/'.concat(data['id'], '/'))
     pokemon.frontSpriteUrl = data['sprites']['front_default']
     pokemon.stats = this.flattenStats(data['stats'])
+    pokemon.types = this.flattenTypes(data['types'])
     return pokemon
   }
 
@@ -53,5 +54,16 @@ export class PokemonService {
       }
       return data
     })
+  }
+
+  private flattenTypes(types) {
+    return types.map(data => {
+      if(data['type']) {
+        data['name'] = data['type']['name']
+        data['name'] = data['name'] === '???' ? 'unknown': data['name']
+        delete data['type']
+      }
+      return data
+    }).sort((a , b) => a.slot - b.slot)
   }
 }
