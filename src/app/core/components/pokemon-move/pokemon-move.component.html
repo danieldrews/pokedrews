@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="move" *ngIf="move">
+        <div class="move-content">
+            <span>{{ move.name }}</span>
+            <div class="move-content-data">
+                <app-pokemon-badge-type [type]="move.type"></app-pokemon-badge-type>
+                <div>PP</div>
+                <div>
+                    <div>
+                        <span>{{move.pp}}</span>
+                        <span>/</span>
+                        <span>{{move.pp}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

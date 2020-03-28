@@ -14,6 +14,8 @@ import { PokemonStatusChartComponent } from './pokemon-status-chart/pokemon-stat
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { PokemonBadgeTypeComponent } from './core/components/pokemon-badge-type/pokemon-badge-type.component';
 import { PokemonTypesComponent } from './pokemon-types/pokemon-types.component';
+import { PokemonMoveComponent } from './core/components/pokemon-move/pokemon-move.component';
+import { PokemonMovesComponent } from './pokemon-moves/pokemon-moves.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { PokemonTypesComponent } from './pokemon-types/pokemon-types.component';
     PokemonStatusChartComponent,
     PageNotFoundComponent,
     PokemonBadgeTypeComponent,
-    PokemonTypesComponent
+    PokemonTypesComponent,
+    PokemonMoveComponent,
+    PokemonMovesComponent
   ],
   imports: [
     BrowserModule,

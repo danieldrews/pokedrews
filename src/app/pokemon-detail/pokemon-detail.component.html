@@ -1,7 +1,8 @@
 <app-pokemon-navigator [current]="pokemon"></app-pokemon-navigator>
 <app-pokemon-status-chart [stats]="pokemon.stats"></app-pokemon-status-chart>
-<app-pokemon-types [types]="pokemon.types"></app-pokemon-types>
+Pokemon types: <app-pokemon-types [types]="pokemon.types"></app-pokemon-types>
+Pokemon moves: <app-pokemon-moves [moves]="startMoves" [twoColumns]="true"></app-pokemon-moves>
 <br>
 <br>
-<app-pokemon-types [types]="possibleTypes"></app-pokemon-types>
+All possible types: <app-pokemon-types [types]="possibleTypes"></app-pokemon-types>
 <pre>{{ pokemon | json }}</pre>

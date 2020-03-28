@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="moves" *ngIf="moves" [ngClass]="{'twoColumns': twoColumns}">
+        <div class="move" *ngFor="let move of moves">
+            <app-pokemon-move [move]="move"></app-pokemon-move>
+        </div>
+    </div>
+</div>

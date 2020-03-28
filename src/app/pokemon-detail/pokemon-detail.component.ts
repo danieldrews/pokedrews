@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MoveFilterService } from '../core/pokeapi/move-filter.service';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -8,16 +9,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PokemonDetailComponent implements OnInit {
 
+  private level_learned_at = 5
+  private version_group = 'red-blue'
+  private move_learn_method = 'level-up'
+
   pokemon: any
+  startMoves: Array<any>
 
   //to remove
   possibleTypes
   
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private moveFilterService: MoveFilterService
+    ) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data => { 
       this.pokemon = data.pokemon
+      this.startMoves = this.moveFilterService.get(this.pokemon.moves, this.level_learned_at, this.version_group, this.move_learn_method)
     })
 
     this.possibleTypes = [{

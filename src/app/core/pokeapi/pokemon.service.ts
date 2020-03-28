@@ -4,7 +4,9 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Pokemon } from './model/pokemon';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
+import { TypesFlattener } from './flatteners/types-flattener.service';
+import { StatsFlattener } from './flatteners/stats-flattener.service';
+import { MovesFlattener } from './flatteners/moves-flattener.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,11 @@ export class PokemonService {
     return this.httpClient.get(fullPath)
   }
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private typesFlattener: TypesFlattener,
+    private statsFlattener: StatsFlattener,
+    private movesFlattener: MovesFlattener) { }
 
   getPaginated(offset: number = 0, limit: number = environment.itemLimit): Promise<Pokemon[]> {
     return this.httpGet(`pokemon/?offset=${ offset }&limit=${ limit }`)
@@ -41,29 +47,12 @@ export class PokemonService {
   private mapGet(data): Pokemon {
     let pokemon = new Pokemon(data['name'], '/'.concat(data['id'], '/'))
     pokemon.frontSpriteUrl = data['sprites']['front_default']
-    pokemon.stats = this.flattenStats(data['stats'])
-    pokemon.types = this.flattenTypes(data['types'])
+    pokemon.stats = this.statsFlattener.flatten(data['stats'])
+    pokemon.types = this.typesFlattener.flatten(data['types'])
+    pokemon.moves = this.movesFlattener.flattenBasic(data['moves'])
+    //pokemon.abilities = this.abilitiesFlattener.flatten(data['abilities'])
     return pokemon
   }
 
-  private flattenStats(stats) {
-    return stats.map(data => {
-      if(data['stat']) {
-        data['name'] = data['stat']['name']
-        delete data['stat']
-      }
-      return data
-    })
-  }
 
-  private flattenTypes(types) {
-    return types.map(data => {
-      if(data['type']) {
-        data['name'] = data['type']['name']
-        data['name'] = data['name'] === '???' ? 'unknown': data['name']
-        delete data['type']
-      }
-      return data
-    }).sort((a , b) => a.slot - b.slot)
-  }
 }

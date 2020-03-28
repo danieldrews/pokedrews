@@ -7,7 +7,9 @@ export class Pokemon {
     public frontSpriteUrl: string
     public stats: Array<any>
     public types: Array<any>
-
+    public abilities: Array<any>
+    public moves: Array<any>
+    
     constructor(public name: string, url?: string) { 
         this.id = this.getIdFromUrl(url)
         this.padId = this.id.toString().padStart(3,'0')
