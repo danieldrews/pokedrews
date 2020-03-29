@@ -8,6 +8,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 export class PokemonMovesComponent implements OnChanges {
 
   @Input() moves: Array<any>
+  @Input() slot: number
   @Input() twoColumns = false
   
   constructor() { }

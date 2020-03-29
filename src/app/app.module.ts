@@ -16,6 +16,7 @@ import { PokemonBadgeTypeComponent } from './core/components/pokemon-badge-type/
 import { PokemonTypesComponent } from './pokemon-types/pokemon-types.component';
 import { PokemonMoveComponent } from './core/components/pokemon-move/pokemon-move.component';
 import { PokemonMovesComponent } from './pokemon-moves/pokemon-moves.component';
+import { SlotComponent } from './core/components/slot/slot.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PokemonMovesComponent } from './pokemon-moves/pokemon-moves.component';
     PokemonBadgeTypeComponent,
     PokemonTypesComponent,
     PokemonMoveComponent,
-    PokemonMovesComponent
+    PokemonMovesComponent,
+    SlotComponent
   ],
   imports: [
     BrowserModule,

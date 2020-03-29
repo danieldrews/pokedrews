@@ -8,6 +8,7 @@ import { MoveService } from '../../pokeapi/move.service';
 })
 export class PokemonMoveComponent implements OnInit, OnChanges {
 
+  @Input() slot: number
   @Input('move') inputMove: any
   move: any
 
@@ -23,11 +24,16 @@ export class PokemonMoveComponent implements OnInit, OnChanges {
   load(inputMove) {
     if(!inputMove.id) {
       this.moveService.get(inputMove.name).then(move => {
-        this.move = move
+        this.defineMove(move)
         console.log('move', move)
       })
     } else
-      this.move = inputMove
+      this.defineMove(inputMove)
+  }
+
+  private defineMove(move) {
+    move.name = move.name.replace(/-/g,' ')
+    this.move = move
   }
 
 }

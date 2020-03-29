@@ -1,7 +1,7 @@
 <div class="container">
     <div class="move" *ngIf="move">
         <div class="move-content">
-            <span>{{ move.name }}</span>
+            <span class="move-content-title">{{ move.name }}</span>
             <div class="move-content-data">
                 <app-pokemon-badge-type [type]="move.type"></app-pokemon-badge-type>
                 <div>PP</div>
@@ -12,6 +12,7 @@
                         <span>{{move.pp}}</span>
                     </div>
                 </div>
+                <app-slot [slot]="slot"></app-slot>
             </div>
         </div>
     </div>
