@@ -17,6 +17,8 @@ import { PokemonTypesComponent } from './pokemon-types/pokemon-types.component';
 import { PokemonMoveComponent } from './core/components/pokemon-move/pokemon-move.component';
 import { PokemonMovesComponent } from './pokemon-moves/pokemon-moves.component';
 import { SlotComponent } from './core/components/slot/slot.component';
+import { PokemonEvolutionChainComponent } from './pokemon-evolution-chain/pokemon-evolution-chain.component';
+import { UtilsService } from './core/services/utils.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { SlotComponent } from './core/components/slot/slot.component';
     PokemonTypesComponent,
     PokemonMoveComponent,
     PokemonMovesComponent,
-    SlotComponent
+    SlotComponent,
+    PokemonEvolutionChainComponent
   ],
   imports: [
     BrowserModule,

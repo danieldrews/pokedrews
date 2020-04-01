@@ -1,3 +1,5 @@
+import { UtilsService } from '../../services/utils.service'
+
 export class Pokemon {
     public id: number
     public padId: string
@@ -11,14 +13,9 @@ export class Pokemon {
     public moves: Array<any>
     
     constructor(public name: string, url?: string) { 
-        this.id = this.getIdFromUrl(url)
+        this.id = UtilsService.getIdFromUrl(url)
         this.padId = this.id.toString().padStart(3,'0')
         this.imgUrl = this.getImghUrl(this.padId)
-    }
-
-    private getIdFromUrl(url: string): number {
-        let arrUrl = url.split('/')
-        return Number.parseInt(arrUrl[arrUrl.length - 2])
     }
 
     private getImghUrl(padId: string): string {

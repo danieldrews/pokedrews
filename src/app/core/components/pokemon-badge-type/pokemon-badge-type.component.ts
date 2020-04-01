@@ -9,8 +9,6 @@ export class PokemonBadgeTypeComponent implements OnChanges {
 
   @Input() type: any
 
-  constructor() { }
-
   ngOnChanges(changes: SimpleChanges): void {
     let type = changes['type']
     if(type) this.type = type.currentValue

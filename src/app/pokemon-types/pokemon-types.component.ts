@@ -9,8 +9,6 @@ export class PokemonTypesComponent implements OnChanges {
 
   @Input() types: Array<any>
 
-  constructor() { }
-
   ngOnChanges(changes: SimpleChanges): void {
     let types = changes['types']
     if(types) this.types = types.currentValue

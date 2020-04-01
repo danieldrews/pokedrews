@@ -11,11 +11,6 @@ export class PokemonMovesComponent implements OnChanges {
   @Input() slot: number
   @Input() twoColumns = false
   
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
     let moves = changes['moves']
     if(moves) this.moves = moves.currentValue

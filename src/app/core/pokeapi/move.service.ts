@@ -22,7 +22,7 @@ export class MoveService {
   get(id: string): Promise<any> {
     return this.httpGet(`move/${id}`)
     .pipe(
-      tap(content => console.log(content)),
+      tap(content => environment.pokeApiLog ? console.log(content) : undefined),
       map(data => this.movesFlattener.flattenSingle(data))
     ).toPromise()
   }

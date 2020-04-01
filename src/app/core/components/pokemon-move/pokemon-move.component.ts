@@ -6,15 +6,13 @@ import { MoveService } from '../../pokeapi/move.service';
   templateUrl: './pokemon-move.component.html',
   styleUrls: ['./pokemon-move.component.sass']
 })
-export class PokemonMoveComponent implements OnInit, OnChanges {
+export class PokemonMoveComponent implements OnChanges {
 
   @Input() slot: number
   @Input('move') inputMove: any
   move: any
 
   constructor(private moveService: MoveService) { }
-  
-  ngOnInit(): void { }
 
   ngOnChanges(changes: SimpleChanges): void {
     let inputMove = changes['inputMove']
@@ -25,7 +23,6 @@ export class PokemonMoveComponent implements OnInit, OnChanges {
     if(!inputMove.id) {
       this.moveService.get(inputMove.name).then(move => {
         this.defineMove(move)
-        console.log('move', move)
       })
     } else
       this.defineMove(inputMove)
