@@ -26,12 +26,24 @@ export class EvolutionChainService {
   private mapGet(data) {
     var newChain = []
     let chain = data['chain']
+
+    let buildChainElm = (evolves_to, vertical = false) => {
+      return {
+        'species': evolves_to['species']['name'],
+        'evolution_details': evolves_to['evolution_details'][0],
+        'vertical': vertical
+      }
+    }
     do {
-      newChain.push({
-        'species': chain['species']['name'],
-        'evolution_details': chain['evolution_details'][0]
-      })
-      chain = chain['evolves_to'][0]
+      let evolves_to = chain['evolves_to']
+      newChain.push(buildChainElm(chain));
+
+      if(evolves_to.length > 1) {
+        evolves_to.forEach(evolves => newChain.push(buildChainElm(evolves, true)))
+        evolves_to = []
+      }
+
+      chain = evolves_to[0]
     }while(!!chain && chain.hasOwnProperty('evolves_to'))
 
     data['chain'] = newChain
