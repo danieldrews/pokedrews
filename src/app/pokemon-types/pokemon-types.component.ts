@@ -1,9 +1,10 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-types',
   templateUrl: './pokemon-types.component.html',
-  styleUrls: ['./pokemon-types.component.sass']
+  styleUrls: ['./pokemon-types.component.sass'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PokemonTypesComponent implements OnChanges {
 

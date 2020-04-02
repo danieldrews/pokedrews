@@ -15,7 +15,7 @@ export class PokemonSpeciesService {
     return this.httpClient.get(fullPath)
   }
   
-  private movePropsToDelete = ['color', 'egg_groups', 'flavor_text_entries', 'form_descriptions', 'genera', 'generation', 'growth_rate', 'habitat', 'names', 'pal_park_encounters', 'pokedex_numbers', 'shape', 'varieties']
+  private movePropsToDelete = ['egg_groups', 'flavor_text_entries', 'form_descriptions', 'genera', 'generation', 'growth_rate', 'habitat', 'names', 'pal_park_encounters', 'pokedex_numbers', 'shape', 'varieties']
 
   constructor(private httpClient: HttpClient) { }
 
@@ -32,6 +32,9 @@ export class PokemonSpeciesService {
 
     if(data['evolves_from_species'] && typeof data['evolves_from_species'] === 'object')
       data['evolves_from_species'] = data['evolves_from_species']['name']
+
+    if(data['color'] && typeof data['color'] === 'object')
+      data['color'] = data['color']['name']
 
     this.movePropsToDelete.forEach(p => delete data[p])
 

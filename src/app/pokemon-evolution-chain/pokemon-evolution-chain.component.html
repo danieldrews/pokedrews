@@ -1,5 +1,14 @@
-<div class="container" *ngIf="evolutionChain">
+<div class="container" class="{{'base-color-' + species.color}}" *ngIf="evolutionChain">
+    species-color: {{species.color}}
     <div class="evolutions">
-        <pre>{{evolutionChain | json }}</pre>
+        <div class="evolution" *ngFor="let chain of evolutionChain.chain">
+            <div class="evolution-image">
+                <img src="{{ chain.pokemon.imgUrl }}" *ngIf="chain.pokemon">
+            </div>
+            <div class="evolution-data">
+                <div class="evolution-title">{{chain.species}}</div>
+                <app-pokemon-types [types]="chain.pokemon.types" *ngIf="chain.pokemon"></app-pokemon-types>
+            </div>
+        </div>
     </div>
 </div>

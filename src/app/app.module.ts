@@ -18,7 +18,6 @@ import { PokemonMoveComponent } from './core/components/pokemon-move/pokemon-mov
 import { PokemonMovesComponent } from './pokemon-moves/pokemon-moves.component';
 import { SlotComponent } from './core/components/slot/slot.component';
 import { PokemonEvolutionChainComponent } from './pokemon-evolution-chain/pokemon-evolution-chain.component';
-import { UtilsService } from './core/services/utils.service';
 
 @NgModule({
   declarations: [

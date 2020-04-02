@@ -24,6 +24,8 @@ export class EvolutionChainService {
   }
 
   private mapGet(data) {
+    if(data['map']) return data
+
     var newChain = []
     let chain = data['chain']
 
@@ -47,7 +49,7 @@ export class EvolutionChainService {
     }while(!!chain && chain.hasOwnProperty('evolves_to'))
 
     data['chain'] = newChain
-
+    data['map']  = true
     return data 
   }
 }

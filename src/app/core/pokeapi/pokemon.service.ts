@@ -31,7 +31,7 @@ export class PokemonService {
         map(data => this.mapGetPaginated(data))).toPromise()
   }
 
-  get(id: number): Promise<Pokemon> {
+  get(id: any): Promise<Pokemon> {
     return this.httpGet(`pokemon/${id}`)
     .pipe(
       tap(content => environment.pokeApiLog ? console.log(content) : undefined),
