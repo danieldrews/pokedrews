@@ -12,9 +12,12 @@ import { PokemonService } from '../core/pokeapi/pokemon.service';
 })
 export class PokemonEvolutionChainComponent implements OnChanges {
 
+  private species: any
+
   @Input() id: number
   evolutionChain: any
-  species: any
+  chainLoad = []
+  baseColor: string
   
   constructor(
     private pokemonService: PokemonService,
@@ -42,7 +45,15 @@ export class PokemonEvolutionChainComponent implements OnChanges {
   }
 
   private loadPokemonData(chain) {
-    chain.forEach(evolution => this.pokemonService.get(evolution.species).then(pokemon => evolution['pokemon'] = pokemon))
+    chain.forEach(evolution => {
+      this.chainLoad.push(true)
+       this.pokemonService.get(evolution.species).then(pokemon => {
+        this.chainLoad.shift()
+        evolution['pokemon'] = pokemon
+        if(pokemon.name === this.species.name) {
+          this.baseColor = pokemon.types[0].name
+        }
+      })
+    })
   }
-
 }

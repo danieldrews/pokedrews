@@ -1,8 +1,9 @@
-<div class="container" class="{{'base-color-' + species.color}}" *ngIf="evolutionChain">
-    species-color: {{species.color}}
+<div class="container" class="{{ 'base-color-' + baseColor }}" *ngIf="evolutionChain && chainLoad.length === 0">
+    species-color: {{baseColor}}
     <div class="evolutions">
         <div class="evolution" *ngFor="let chain of evolutionChain.chain">
             <div class="evolution-image">
+                <div class="evolution-image-circle"></div>
                 <img src="{{ chain.pokemon.imgUrl }}" *ngIf="chain.pokemon">
             </div>
             <div class="evolution-data">

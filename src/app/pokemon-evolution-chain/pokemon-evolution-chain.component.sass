@@ -1,21 +1,34 @@
+@import "../../colors.sass"
+
 .evolutions
     display: flex
     flex-flow: row wrap
     justify-content: space-around
-    border: 6px solid
+    border: 3px solid
     border-radius: 12px
+    color: black
 
 .evolution
-    margin-top: 5px
+    padding: 15px
 
 .evolution-image
-    border: 6px solid
-    border-radius: 50%
+    display: flex
+    flex-flow: column
+    align-items: center
+    margin-top: -20px
     img
+        position: relative
         border: 0
 
+.evolution-image-circle
+    border: 3px solid
+    border-radius: 50%
+    margin-top: 20px
+    width: 150px
+    height: 150px
+    position: absolute
+
 .evolution-data
-    margin: 20px 0 5px 0
     border-radius: 12px
     .badges
         justify-content: center
@@ -23,18 +36,11 @@
 .evolution-title
     text-align: center
 
-.base-color-blue
-    .evolutions
-       background-color: #6890F0
-    .evolutions, .evolution-image
-        border-color: #445E9C
-    .evolution-data, .evolution-image
-        background-color: #9DB7F5
-
-.base-color-green
-    .evolutions
-       background-color: #78C850
-    .evolutions, .evolution-image
-       border-color: #0B7A0B
-    .evolution-data, .evolution-image
-       background-color: #A7DB8D
+@each $type, $lighter, $light, $dark in $types
+ .base-color-#{$type}
+     .evolutions
+        background-color: $light
+     .evolutions, .evolution-image-circle
+         border-color: $dark
+     .evolution-data, .evolution-image-circle
+         background-color: $lighter
