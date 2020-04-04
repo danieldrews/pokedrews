@@ -37,10 +37,21 @@
     text-align: center
 
 @each $type, $lighter, $light, $dark in $types
- .base-color-#{$type}
-     .evolutions
-        background-color: $light
-     .evolutions, .evolution-image-circle
-         border-color: $dark
-     .evolution-data, .evolution-image-circle
-         background-color: $lighter
+    .type-one-color-#{$type}
+        .evolutions
+            background-color: $light
+            border-color: $dark
+        .evolution-image-circle
+            border-color: $dark
+            background-color: $lighter
+        .evolution-data
+            background-color: $lighter
+        .evolution-image:not([class*="type-two-color"])
+            .evolution-image-circle
+                border-color: $dark !important
+
+    .type-two-color-#{$type}
+        .evolutions
+            border-color: $dark !important
+        .evolution-image-circle
+            border-color: $dark !important

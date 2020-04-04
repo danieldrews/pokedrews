@@ -17,7 +17,7 @@ export class PokemonEvolutionChainComponent implements OnChanges {
   @Input() id: number
   evolutionChain: any
   chainLoad = []
-  baseColor: string
+  typeColors: Array<string>
   
   constructor(
     private pokemonService: PokemonService,
@@ -51,9 +51,15 @@ export class PokemonEvolutionChainComponent implements OnChanges {
         this.chainLoad.shift()
         evolution['pokemon'] = pokemon
         if(pokemon.name === this.species.name) {
-          this.baseColor = pokemon.types[0].name
+          this.typeColors = this.buildTypeColors(pokemon.types)
         }
       })
     })
+  }
+
+  buildTypeColors(types): Array<string> {
+    return [
+      'type-one-color-' + types[0].name, 
+      types[1] ? 'type-two-color-' + types[1].name : '']
   }
 }
