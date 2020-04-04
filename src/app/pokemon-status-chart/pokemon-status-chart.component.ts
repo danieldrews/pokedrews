@@ -8,6 +8,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 export class PokemonStatusChartComponent implements OnChanges {
 
   @Input('stats') inputStats: any
+  @Input() showHpBar = false
   stats: any
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -20,7 +21,8 @@ export class PokemonStatusChartComponent implements OnChanges {
     let hpStat = this.stats.pop()
     let hpStatBar = JSON.parse(JSON.stringify(hpStat))
     hpStatBar.name = 'hpbar'
-    this.stats.unshift(hpStatBar)
+    if(!this.showHpBar)
+      this.stats.unshift(hpStatBar)
     this.stats.unshift(hpStat)
   }
 }

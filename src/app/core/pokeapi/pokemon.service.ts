@@ -7,6 +7,7 @@ import { Pokemon } from './model/pokemon';
 import { TypesFlattener } from './flatteners/types-flattener.service';
 import { StatsFlattener } from './flatteners/stats-flattener.service';
 import { MovesFlattener } from './flatteners/moves-flattener.service';
+import { AbilitiesFlattener } from './flatteners/abilities-flattener.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,8 @@ export class PokemonService {
     private httpClient: HttpClient,
     private typesFlattener: TypesFlattener,
     private statsFlattener: StatsFlattener,
-    private movesFlattener: MovesFlattener) { }
+    private movesFlattener: MovesFlattener,
+    private abilitiesFlattener: AbilitiesFlattener) { }
 
   getPaginated(offset: number = 0, limit: number = environment.itemLimit): Promise<Pokemon[]> {
     return this.httpGet(`pokemon/?offset=${ offset }&limit=${ limit }`)
@@ -50,7 +52,7 @@ export class PokemonService {
     pokemon.stats = this.statsFlattener.flatten(data['stats'])
     pokemon.types = this.typesFlattener.flatten(data['types'])
     pokemon.moves = this.movesFlattener.flattenBasic(data['moves'])
-    //pokemon.abilities = this.abilitiesFlattener.flatten(data['abilities'])
+    pokemon.abilities = this.abilitiesFlattener.flatten(data['abilities'])
     return pokemon
   }
 

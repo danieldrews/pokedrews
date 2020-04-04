@@ -1,8 +1,32 @@
-<app-pokemon-navigator [current]="pokemon"></app-pokemon-navigator>
-<app-pokemon-status-chart [stats]="pokemon.stats"></app-pokemon-status-chart>
-Pokemon types: <app-pokemon-types [types]="pokemon.types"></app-pokemon-types>
-Pokemon moves: <app-pokemon-moves [moves]="startMoves" [twoColumns]="true"></app-pokemon-moves>
-Evoluiton chain: <app-pokemon-evolution-chain [id]="pokemon.id"></app-pokemon-evolution-chain>
-<br>
-<br>
-All possible types: <app-pokemon-types [types]="possibleTypes"></app-pokemon-types>
+<nav>
+    <app-pokemon-navigator [current]="pokemon"></app-pokemon-navigator>
+</nav>
+<section class="basic-data">
+    <div class="center-row">
+        <div>
+            <img src="{{pokemon.imgUrl}}" alt="{{ pokemon.name }}">
+        </div>
+        <div>
+            <span>#{{ pokemon.padId }}&nbsp;{{ pokemon.name }}</span>
+            <div>
+                Pokemon types
+                <app-pokemon-types [types]="pokemon.types"></app-pokemon-types>
+            </div>
+            <div>
+                Abilities
+                <div *ngFor="let ability of pokemon.abilities">
+                    <span>{{ability.name}}</span><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="base-stats">
+        Base stats
+        <app-pokemon-status-chart [stats]="pokemon.stats"></app-pokemon-status-chart>
+        Moves
+        <app-pokemon-moves [moves]="startMoves" [twoColumns]="true"></app-pokemon-moves>
+    </div>
+</section>
+<section class="center-row">
+    <app-pokemon-evolution-chain [id]="pokemon.id"></app-pokemon-evolution-chain>
+</section>

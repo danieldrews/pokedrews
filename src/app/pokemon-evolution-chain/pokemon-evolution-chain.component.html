@@ -3,7 +3,7 @@
         <div class="evolution" *ngFor="let chain of evolutionChain.chain">
             <div class="evolution-image" *ngIf="chain.pokemon" [ngClass]="buildTypeColors(chain.pokemon.types)">
                 <div class="evolution-image-circle"></div>
-                <img src="{{ chain.pokemon.imgUrl }}">
+                <img src="{{ chain.pokemon.imgUrl }}" alt="{{ chain.pokemon.name }}">
             </div>
             <div class="evolution-data">
                 <div class="evolution-title">{{chain.species}}</div>
