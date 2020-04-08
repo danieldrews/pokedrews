@@ -18,6 +18,7 @@ import { PokemonMoveComponent } from './core/components/pokemon-move/pokemon-mov
 import { PokemonMovesComponent } from './pokemon-moves/pokemon-moves.component';
 import { SlotComponent } from './core/components/slot/slot.component';
 import { PokemonEvolutionChainComponent } from './pokemon-evolution-chain/pokemon-evolution-chain.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PokemonEvolutionChainComponent } from './pokemon-evolution-chain/pokemo
     PokemonMoveComponent,
     PokemonMovesComponent,
     SlotComponent,
-    PokemonEvolutionChainComponent
+    PokemonEvolutionChainComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

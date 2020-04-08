@@ -41,8 +41,13 @@ export class EvolutionChainService {
       newChain.push(buildChainElm(chain));
 
       if(evolves_to.length > 1) {
-        evolves_to.forEach(evolves => newChain.push(buildChainElm(evolves, true)))
-        evolves_to = []
+        let internalChain = []
+        evolves_to.forEach(evolves => {
+          newChain.push(buildChainElm(evolves, true))
+          if(evolves['evolves_to'].length > 0)
+          Array.prototype.push.apply(internalChain, evolves['evolves_to'])
+        })
+        evolves_to = internalChain
       }
 
       chain = evolves_to[0]
