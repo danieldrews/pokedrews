@@ -5,11 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.sass']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  routes = [{
+    link: '/pokedex',
+    name: 'pokedex'
+  }, {
+    link: '/game',
+    name: 'game'
+  }]
 
 }

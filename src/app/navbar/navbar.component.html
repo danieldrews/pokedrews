@@ -1,14 +1,11 @@
-<nav>
-    <div class="nav-left">
-        <a href="#">pokedrews</a>
+<nav class="navbar">
+    <div class="navbar__left">
+        <a href="#" class="navbar__link navbar__title">pokedrews</a>
     </div>
-    <div class="nav-right">
-        <ul>
-            <li>
-                <a href="/pokedex">pokedex</a>
-            </li>
-            <li>
-                <a href="/game">game</a>
+    <div class="navbar__right">
+        <ul class="navbar__menu">
+            <li class="navbar__route" *ngFor="let route of routes">
+                <a href="{{route.link}}" class="navbar__link">{{route.name}}</a>
             </li>
         </ul>
     </div>
