@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent {
 
   routes = [{
-    link: '/pokedex',
+    link: '#/pokedex',
     name: 'pokedex'
   }, {
-    link: '/game',
+    link: '#/game',
     name: 'game'
   }]
 
