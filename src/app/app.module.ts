@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
-import { CacheInterceptor } from './core/interceptors/cache-interceptor.service';
 import { PokemonNavigatorComponent } from './pokemon-navigator/pokemon-navigator.component';
 import { PokemonStatusChartComponent } from './pokemon-status-chart/pokemon-status-chart.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
@@ -19,6 +18,9 @@ import { PokemonMovesComponent } from './pokemon-moves/pokemon-moves.component';
 import { SlotComponent } from './core/components/slot/slot.component';
 import { PokemonEvolutionChainComponent } from './pokemon-evolution-chain/pokemon-evolution-chain.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,12 +42,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{ 
-    provide: HTTP_INTERCEPTORS, 
-    useClass: CacheInterceptor, 
-    multi: true 
+    provide: LocationStrategy, 
+    useClass: HashLocationStrategy 
   }],
   bootstrap: [AppComponent]
 })
