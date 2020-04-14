@@ -1,0 +1,32 @@
+$marginEnter: -50px
+
+.container
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    height: 90vh
+    background-color: #d7dee4 //smoke (blue)
+
+.choice
+    width: 30vh
+    height: 30vh
+    background-color: #6b7a99 //cool gray
+    border: 1px solid #92a7ba //cadet gray
+    z-index: 2
+    &__right,
+    &__left
+    &:hover
+        width: 40vh
+        height: 40vh            
+        z-index: 4
+        transition: 400ms
+
+    &__right:hover
+        margin-left: $marginEnter
+    &__left:hover
+        margin-right: $marginEnter
+
+    &__middle:hover
+        margin: 0 $marginEnter
+

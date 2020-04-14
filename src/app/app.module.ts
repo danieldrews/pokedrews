@@ -21,6 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { GameComponent } from './game/game.component';
+import { StarterSelectorComponent } from './game/starter-selector/starter-selector.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     PokemonMovesComponent,
     SlotComponent,
     PokemonEvolutionChainComponent,
-    NavbarComponent
+    NavbarComponent,
+    GameComponent,
+    StarterSelectorComponent
   ],
   imports: [
     BrowserModule,
