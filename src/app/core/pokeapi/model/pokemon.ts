@@ -18,7 +18,11 @@ export class Pokemon {
         this.imgUrl = this.getImghUrl(this.padId)
     }
 
-    private getImghUrl(padId: string): string {
+    public getImghUrl(padId: string): string {
         return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${ padId }.png`
+    }
+
+    public static BuildWithId(id: number) {
+        return new Pokemon(undefined, `/${id}/`)
     }
 }
