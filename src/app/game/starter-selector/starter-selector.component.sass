@@ -2,12 +2,13 @@ $marginEnter: -50px
 
 .container
     background-color: #d7dee4 //smoke (blue)
+    height: 91vh
 
 .generation
     display: flex
     justify-content: center
     align-items: center
-    height: 10vh
+    height: 10%
 
 .generation__select
     border: none
@@ -20,7 +21,7 @@ $marginEnter: -50px
     flex-direction: row
     justify-content: center
     align-items: center
-    height: 83vh
+    height: 90%
 
 .choice
     width: 30vh
@@ -47,21 +48,52 @@ $marginEnter: -50px
     height: 100%
 
 @media (max-width: 880px)
+    $marginEnter: -40px
+    .choice
+        width: 25vh
+        height: 25vh
+        &:hover
+            width: 30vh
+            height: 30vh
+        &__right:hover
+            margin-left: $marginEnter
+        &__left:hover
+            margin-right: $marginEnter
+        &__middle:hover
+            margin: 0 $marginEnter
+
+@media (max-width: 730px)
+    $marginEnter: -30px
     .choice
         width: 20vh
         height: 20vh
         &:hover
-            width: 30vh
-            height: 30vh
+            width: 25vh
+            height: 25vh
+        &__right:hover
+            margin-left: $marginEnter
+        &__left:hover
+            margin-right: $marginEnter
+        &__middle:hover
+            margin: 0 $marginEnter
 
-@media (max-width: 590px)
+@media (max-width: 590px)   
+    $marginEnter: -10px
+    .container
+        height: 88vh
     .choices
         flex-flow: column
-    .choice__right:hover
-        margin-left: 0
-        margin-top: $marginEnter
-    .choice__left:hover
-        margin-right: 0
-        margin-bottom: $marginEnter
-    .choice__middle:hover
-        margin: $marginEnter 0
+    .choice
+        width: 25vh
+        height: 25vh
+        &:hover
+            width: 30vh
+            height: 30vh
+        &__right:hover
+            margin-left: 0
+            margin-top: $marginEnter
+        &__left:hover
+            margin-right: 0
+            margin-bottom: $marginEnter
+        &__middle:hover
+            margin: $marginEnter 0

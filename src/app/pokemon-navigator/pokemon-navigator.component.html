@@ -1,22 +1,22 @@
 <div class="container">
     <div class="cards">
         <div class="card" *ngIf="previous">
-            <div class="card-content">
+            <div class="card__content">
                 <div (click)="changePokemon(previous.id)">←</div>
-                <div class="card-content-image" (click)="changePokemon(previous.id)">
+                <div class="card__image" (click)="changePokemon(previous.id)">
                     <img src="{{ previous.frontSpriteUrl }}" alt={{previous.name}}>
                 </div>
-                <div class="card-content-title" (click)="changePokemon(previous.id)">
+                <div class="card__title" (click)="changePokemon(previous.id)">
                     <span>#{{ previous.padId }}&nbsp;{{ previous.name }}</span>
                 </div>
             </div>
         </div>
         <div class="card" *ngIf="next">
-            <div class="card-content">
-                <div class="card-content-title" (click)="changePokemon(next.id)">
+            <div class="card__content">
+                <div class="card__title" (click)="changePokemon(next.id)">
                     <span>#{{ next.padId }}&nbsp;{{ next.name }}</span>
                 </div>
-                <div class="card-content-image" (click)="changePokemon(next.id)">
+                <div class="card__image" (click)="changePokemon(next.id)">
                     <img src="{{ next.frontSpriteUrl }}" alt={{next.name}}>
                 </div>
                 <div (click)="changePokemon(next.id)">→</div>

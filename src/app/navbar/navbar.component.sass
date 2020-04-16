@@ -2,14 +2,14 @@
 
 .nav
     display: flex
-    background-color: $gray-light
-    border: 1px solid $gray-lighter
+    background-color: #1B1E22
     position: fixed
     top: 0
     left: 0
     width: 100%
     z-index: 9999
-    color: #141414
+    color: $gray-light
+    padding: 16px 0
 
 .nav__right
     flex: 1 0 40%
@@ -18,21 +18,21 @@
     display: flex
     align-items: center
     flex: 1 0 60%
-    min-height: 41px
 
 .nav__menu         
     display: flex
     justify-content: flex-end
     list-style: none
     margin: 0
-    min-height: 41px
 
 .nav__route
     display: flex
     align-items: center
     padding: 6px 15px
     &:hover
-        background-color: #fff
+        background-color: #f0f0f0
+        color: #141414
+        margin: -16px 0
 
 .link
     color: inherit

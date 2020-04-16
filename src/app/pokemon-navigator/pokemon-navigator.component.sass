@@ -5,6 +5,7 @@
     background-color: #E5E5E5
     border: 1px solid $gray-lighter
     border-radius: 0.25rem
+    margin: 0 -8px
 
 .cards
     display: flex
@@ -15,7 +16,7 @@
     flex: 1 1 auto
 
 
-.card-content  
+.card__content  
     display: flex
     flex-flow: wrap
     align-items: center
@@ -23,14 +24,23 @@
     div
         cursor: pointer
 
-.card-content-title
+.card__title
   font-size: 0.7rem
   font-weight: 300
   letter-spacing: 2px
   text-transform: uppercase
 
-.card-content-image
+.card__image
     height: 128px
     width: 128px
     display: flex
     align-items: center
+
+@media (max-width: 554px)
+    .cards
+        flex-flow: unset
+    .card__content
+        flex-direction: column-reverse
+    .card:nth-child(2)
+        .card__content
+            flex-flow: column
