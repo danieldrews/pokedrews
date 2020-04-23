@@ -1,71 +1,37 @@
 @import "../../colors.sass"
 
-.container
-    letter-spacing: 0
-    padding: 1rem
-
 .cards
     display: flex
     flex-flow: row wrap
-
+    
 .card
-    order: 1
     flex: 1 1 auto
     padding: 1rem 
-    &:hover
-        .card-content-image
-            filter: contrast(100%)
-        .card-content-image img
-            transform: scale(1.2)
-            padding-bottom: -1rem
-
-.card-content  
-    padding: 1rem
-    box-sizing: border-box
-    background-color: $gray-lightest
-    border: 1px solid $gray-lighter
-    border-radius: 0.25rem
-    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25)
-    &:hover
-        cursor: pointer
-
-.card-content-title
-  display: flex
-  justify-content: space-between
-  color: $gray-dark
-  font-size: 1.25rem
-  font-weight: 300
-  letter-spacing: 2px
-  text-transform: uppercase
-
-.card-content-image
-    display: flex
-    justify-content: center
-    filter: contrast(70%)
-    transition: filter 0.5s cubic-bezier(.43,.41,.22,.91)
-    img
+    &__content  
+        padding: 1rem
+        box-sizing: border-box
+        background-color: $gray-lightest
+        border: 1px solid $gray-lighter
+        border-radius: 0.25rem
+        box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25)
+        text-align: center
+        &:hover
+            cursor: pointer
+    &__title
+        display: flex
+        justify-content: space-between
+        color: $gray-dark
+        font-size: 1.25rem
+        letter-spacing: 2px
+        text-transform: uppercase
+    &__image
+        filter: contrast(70%)
+        transition: filter 0.5s cubic-bezier(.43,.41,.22,.91)
         transition: all .2s ease-in-out
         position: relative
         z-index: 35
-
-.card-content-bottom
-    display: flex
-    justify-content: center
-    font-size: 1.25rem
-    font-weight: 300
-    letter-spacing: 2px
-    text-transform: uppercase
-    position: relative
-    z-index: 40
-    button
-        background-color: white
-        border: 1px solid $gray-light
-        color: $gray-dark
-        width: 215px
-        height: 34px
-        &:hover
-            background-color: $gray-lighter
-
-.card-content-text
-    font-size: 0.875rem
-    line-height: 1.5  
+    &:hover
+        .card__image
+            filter: contrast(100%)
+            transform: scale(1.2)
+            padding-bottom: -1rem

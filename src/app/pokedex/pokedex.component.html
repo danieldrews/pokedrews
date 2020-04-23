@@ -1,21 +1,14 @@
-<div class="container" 
+<div class="cards" 
     infiniteScroll
     [infiniteScrollDistance]="1"
     (scrolled)="onScroll()">
-    <div class="cards">
-        <div class="card" *ngFor="let poke of pokemons">
-            <div class="card-content" (click)="openPokemonDetail(poke)">
-                <div class="card-content-title">
-                    <span>{{ poke.name }}</span>
-                    <span>#{{ poke.padId }}</span>
-                </div>
-                <div class="card-content-image">
-                    <img src="{{ poke.imgUrl }}" alt="{{ poke.name }}">
-                </div>
-                <div class="card-content-bottom">
-                    <!-- <button class="btn">About</button> -->
-                </div>
+    <div class="card" *ngFor="let poke of pokemons">
+        <div class="card__content" (click)="openPokemonDetail(poke)">
+            <div class="card__title">
+                <span>{{ poke.name }}</span>
+                <span>#{{ poke.padId }}</span>
             </div>
+            <img class="card__image" src="{{ poke.imgUrl }}" alt="{{ poke.name }}">
         </div>
     </div>
 </div>
