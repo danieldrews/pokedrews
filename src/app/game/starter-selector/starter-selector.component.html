@@ -1,18 +1,32 @@
-<div class="container">
-    <section class="generation">
-        <select (change)="changeGeneration($event)" class="generation__select">
-            <option *ngFor="let gen of generations" [value]="gen.id" [selected]="gen.id===selectedGen.id">#generation {{ gen.id }}</option>
-        </select>
-    </section>
-    <section class="choices">
-        <div class="choice choice__left" (click)="choose(selectedGen.starters[0])">
-            <img class="choice__image" [src]="selectedGen.starters[0].imgUrl">
+<div class="container " >    
+    <div class="chooser">
+        <div class="quad">
+            <div class="quad__content">
+                <img src="{{selectedGen.starters[2].imgUrl}}" (click)="choose(selectedGen.starters[2])">
+            </div>
         </div>
-        <div class="choice choice__middle" (click)="choose(selectedGen.starters[1])">
-            <img class="choice__image" [src]="selectedGen.starters[1].imgUrl">
+        <div class="quad">
+            <div class="quad__content">
+                <img [src]="selectedGen.starters[0].imgUrl" (click)="choose(selectedGen.starters[0])">
+            </div>
         </div>
-        <div class="choice choice__right" (click)="choose(selectedGen.starters[2])">
-            <img class="choice__image" src="{{selectedGen.starters[2].imgUrl}}">
+        <div class="quad">
+            <div class="quad__content">
+                <img [src]="selectedGen.starters[1].imgUrl" (click)="choose(selectedGen.starters[1])">
+            </div>
         </div>
-    </section>
+        <div class="quad">
+            <div class="quad__content region">
+                <span class="region__name region__down">{{selectedGen.name}}</span>
+                <span class="region__down">REGION</span>
+                <div class="region__action region__down">
+                    <fa-icon [icon]="faArrowUp" (click)="changeRegion(true)"></fa-icon>
+                    <fa-icon [icon]="faArrowDown" (click)="changeRegion()"></fa-icon>
+                </div>
+                <div class="region__pokeball">
+                    <img src="assets/images/pokeball_512.png" alt="pokeball">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

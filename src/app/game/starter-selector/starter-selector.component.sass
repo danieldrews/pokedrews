@@ -1,99 +1,59 @@
-$marginEnter: -50px
+@import "../../../colors.sass"
 
 .container
-    background-color: #d7dee4 //smoke (blue)
     height: 91vh
-
-.generation
     display: flex
     justify-content: center
     align-items: center
-    height: 10%
 
-.generation__select
-    border: none
-    height: 40px
-    font-size: inherit
-    color: inherit
-
-.choices
-    display: flex
-    flex-direction: row
+.chooser
+    display: grid
     justify-content: center
     align-items: center
-    height: 90%
+    grid-template-columns: repeat(2, 150px)
+    grid-template-rows: repeat(2, 150px)
+    background: #000
+    transform: rotate(45deg)
 
-.choice
-    width: 30vh
-    height: 30vh
-    background-color: #6b7a99 //cool gray
-    border: 1px solid #92a7ba //cadet gray
-    z-index: 2
-    &:hover
-        width: 40vh
-        height: 40vh
-        z-index: 4
-        transition: 400ms
-        cursor: pointer
-
-    &__right:hover
-        margin-left: $marginEnter
-    &__left:hover
-        margin-right: $marginEnter
-    &__middle:hover
-        margin: 0 $marginEnter
-
-.choice__image
-    max-width: 100%
+.quad
     height: 100%
+    &__content
+        transform: rotate(-45deg)
+        display: flex
+        justify-content: center
+        align-items: center
+        height: inherit
 
-@media (max-width: 880px)
-    $marginEnter: -40px
-    .choice
-        width: 25vh
-        height: 25vh
-        &:hover
-            width: 30vh
-            height: 30vh
-        &__right:hover
-            margin-left: $marginEnter
-        &__left:hover
-            margin-right: $marginEnter
-        &__middle:hover
-            margin: 0 $marginEnter
-
-@media (max-width: 730px)
-    $marginEnter: -30px
-    .choice
-        width: 20vh
-        height: 20vh
-        &:hover
-            width: 25vh
-            height: 25vh
-        &__right:hover
-            margin-left: $marginEnter
-        &__left:hover
-            margin-right: $marginEnter
-        &__middle:hover
-            margin: 0 $marginEnter
-
-@media (max-width: 590px)   
-    $marginEnter: -10px
-    .container
-        height: 88vh
-    .choices
-        flex-flow: column
-    .choice
-        width: 25vh
-        height: 25vh
-        &:hover
-            width: 30vh
-            height: 30vh
-        &__right:hover
-            margin-left: 0
-            margin-top: $marginEnter
-        &__left:hover
-            margin-right: 0
-            margin-bottom: $marginEnter
-        &__middle:hover
-            margin: $marginEnter 0
+.region
+    flex-direction: column
+    justify-content: flex-end
+    color: #ccc
+    font-size: 1rem
+    &__down
+        position: relative
+        top: 10px
+    &__name
+        text-transform: uppercase
+        font-size: 1.5rem
+        font-weight: 700
+    &__action
+        z-index: 10
+        width: 100%
+        top: 15px
+        display: flex
+        justify-content: space-evenly
+        fa-icon
+            cursor: pointer
+            padding: 0 5px
+            &:hover
+                transform: scale(1.5)
+                color: $chinese-yellow
+    &__pokeball
+        background: #fff
+        transform: rotate(45deg)
+        height: 30px
+        padding: 5px
+        img
+            transform: rotate(-45deg)
+            height: 30px
+            width: 30px

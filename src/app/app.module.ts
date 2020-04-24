@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 
 import { PokedexComponent } from './pokedex/pokedex.component';
@@ -46,6 +47,7 @@ import { StarterSelectorComponent } from './game/starter-selector/starter-select
     AppRoutingModule,
     HttpClientModule,
     InfiniteScrollModule,
+    FontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{ 

@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1586997323775,
+  "timestamp": 1587768253001,
   "index": "C:/Program Files/Git/pokedrews/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "C:/Program Files/Git/pokedrews/favicon.ico",
         "C:/Program Files/Git/pokedrews/index.html",
-        "C:/Program Files/Git/pokedrews/main-es2015.7cb90b2cd34bc4c20aac.js",
-        "C:/Program Files/Git/pokedrews/main-es5.7cb90b2cd34bc4c20aac.js",
+        "C:/Program Files/Git/pokedrews/main-es2015.cf0b01bf289d5d18315d.js",
+        "C:/Program Files/Git/pokedrews/main-es5.cf0b01bf289d5d18315d.js",
         "C:/Program Files/Git/pokedrews/manifest.webmanifest",
         "C:/Program Files/Git/pokedrews/polyfills-es2015.1f913f16a2d346cc8bdc.js",
         "C:/Program Files/Git/pokedrews/polyfills-es5.1a3c78b07cd6f16c6e9a.js",
         "C:/Program Files/Git/pokedrews/runtime-es2015.0811dcefd377500b5b1a.js",
         "C:/Program Files/Git/pokedrews/runtime-es5.0811dcefd377500b5b1a.js",
-        "C:/Program Files/Git/pokedrews/styles.87f35e42954e2fe8e6b8.css"
+        "C:/Program Files/Git/pokedrews/styles.7484e63a642631578c1b.css"
       ],
       "patterns": []
     },
@@ -35,6 +35,7 @@
         "C:/Program Files/Git/pokedrews/assets/icons/icon-512x512.png",
         "C:/Program Files/Git/pokedrews/assets/icons/icon-72x72.png",
         "C:/Program Files/Git/pokedrews/assets/icons/icon-96x96.png",
+        "C:/Program Files/Git/pokedrews/assets/images/pokeball_512.png",
         "C:/Program Files/Git/pokedrews/assets/images/psyduck-not-found.png"
       ],
       "patterns": []
@@ -51,17 +52,18 @@
     "C:/Program Files/Git/pokedrews/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "C:/Program Files/Git/pokedrews/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "C:/Program Files/Git/pokedrews/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "C:/Program Files/Git/pokedrews/assets/images/pokeball_512.png": "d0db7ad76aa37c7960e1074334566b54fb0abfbb",
     "C:/Program Files/Git/pokedrews/assets/images/psyduck-not-found.png": "9366ce531d327fc063d0fdc882779717bc1b0a70",
     "C:/Program Files/Git/pokedrews/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "C:/Program Files/Git/pokedrews/index.html": "c73bfb9536683020a8027d4561183a19006342d5",
-    "C:/Program Files/Git/pokedrews/main-es2015.7cb90b2cd34bc4c20aac.js": "3f4eaaa8c7cd52445427ca10c98bddb8946ab837",
-    "C:/Program Files/Git/pokedrews/main-es5.7cb90b2cd34bc4c20aac.js": "8e29bd4f4fc2f209e197d615c67d8937dfbcc8ef",
+    "C:/Program Files/Git/pokedrews/index.html": "f062520d89e1318fc39206fa2f873392635406e7",
+    "C:/Program Files/Git/pokedrews/main-es2015.cf0b01bf289d5d18315d.js": "879cc6c085e8d166ad06b7aa844acacd3dfe2aca",
+    "C:/Program Files/Git/pokedrews/main-es5.cf0b01bf289d5d18315d.js": "b3b9d8d8bdec602f55988f4ed9591a65ddc31616",
     "C:/Program Files/Git/pokedrews/manifest.webmanifest": "dc37b9541a63e1c6138700f15104d58942f981b6",
     "C:/Program Files/Git/pokedrews/polyfills-es2015.1f913f16a2d346cc8bdc.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "C:/Program Files/Git/pokedrews/polyfills-es5.1a3c78b07cd6f16c6e9a.js": "e5472003c8575a8fca7583648df3905038faeb18",
     "C:/Program Files/Git/pokedrews/runtime-es2015.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "C:/Program Files/Git/pokedrews/runtime-es5.0811dcefd377500b5b1a.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "C:/Program Files/Git/pokedrews/styles.87f35e42954e2fe8e6b8.css": "9eab6a3fbb5b055147ce82c9573b47938b3d75e5"
+    "C:/Program Files/Git/pokedrews/styles.7484e63a642631578c1b.css": "0280468b8c0fe12fdd6ec947164bd15171af8591"
   },
   "navigationUrls": [
     {
