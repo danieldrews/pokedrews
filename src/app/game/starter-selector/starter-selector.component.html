@@ -1,16 +1,17 @@
-<div class="container " >    
+<div class="container unselectable" unselectable="on">    
     <div class="chooser">
-        <div class="quad">
+        <div class="quad blue">
             <div class="quad__content">
+                
                 <img src="{{selectedGen.starters[2].imgUrl}}" (click)="choose(selectedGen.starters[2])">
             </div>
         </div>
-        <div class="quad">
+        <div class="quad green">
             <div class="quad__content">
                 <img [src]="selectedGen.starters[0].imgUrl" (click)="choose(selectedGen.starters[0])">
             </div>
         </div>
-        <div class="quad">
+        <div class="quad red">
             <div class="quad__content">
                 <img [src]="selectedGen.starters[1].imgUrl" (click)="choose(selectedGen.starters[1])">
             </div>

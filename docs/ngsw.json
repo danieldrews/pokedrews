@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1587768253001,
+  "timestamp": 1587773733690,
   "index": "C:/Program Files/Git/pokedrews/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "C:/Program Files/Git/pokedrews/favicon.ico",
         "C:/Program Files/Git/pokedrews/index.html",
-        "C:/Program Files/Git/pokedrews/main-es2015.cf0b01bf289d5d18315d.js",
-        "C:/Program Files/Git/pokedrews/main-es5.cf0b01bf289d5d18315d.js",
+        "C:/Program Files/Git/pokedrews/main-es2015.a17ddeb1e056b098cda6.js",
+        "C:/Program Files/Git/pokedrews/main-es5.a17ddeb1e056b098cda6.js",
         "C:/Program Files/Git/pokedrews/manifest.webmanifest",
         "C:/Program Files/Git/pokedrews/polyfills-es2015.1f913f16a2d346cc8bdc.js",
         "C:/Program Files/Git/pokedrews/polyfills-es5.1a3c78b07cd6f16c6e9a.js",
@@ -55,9 +55,9 @@
     "C:/Program Files/Git/pokedrews/assets/images/pokeball_512.png": "d0db7ad76aa37c7960e1074334566b54fb0abfbb",
     "C:/Program Files/Git/pokedrews/assets/images/psyduck-not-found.png": "9366ce531d327fc063d0fdc882779717bc1b0a70",
     "C:/Program Files/Git/pokedrews/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "C:/Program Files/Git/pokedrews/index.html": "f062520d89e1318fc39206fa2f873392635406e7",
-    "C:/Program Files/Git/pokedrews/main-es2015.cf0b01bf289d5d18315d.js": "879cc6c085e8d166ad06b7aa844acacd3dfe2aca",
-    "C:/Program Files/Git/pokedrews/main-es5.cf0b01bf289d5d18315d.js": "b3b9d8d8bdec602f55988f4ed9591a65ddc31616",
+    "C:/Program Files/Git/pokedrews/index.html": "f35c1252965333788be442f3fb9a6aa09b803014",
+    "C:/Program Files/Git/pokedrews/main-es2015.a17ddeb1e056b098cda6.js": "6b9b47946e0d419700fe2fc8aa5148c8a018fc35",
+    "C:/Program Files/Git/pokedrews/main-es5.a17ddeb1e056b098cda6.js": "fa32161f87d92a9b9140199d454929fe04c5c66a",
     "C:/Program Files/Git/pokedrews/manifest.webmanifest": "dc37b9541a63e1c6138700f15104d58942f981b6",
     "C:/Program Files/Git/pokedrews/polyfills-es2015.1f913f16a2d346cc8bdc.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "C:/Program Files/Git/pokedrews/polyfills-es5.1a3c78b07cd6f16c6e9a.js": "e5472003c8575a8fca7583648df3905038faeb18",

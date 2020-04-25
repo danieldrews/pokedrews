@@ -1,12 +1,19 @@
 @import "../../../colors.sass"
 
+@mixin gradientAnimation($angle, $baseColor, $hoverColor)
+    background: linear-gradient($angle, $baseColor, transparent)
+    background-color: $baseColor
+    transition: .3s ease-in-out
+    &:hover
+        background-color: $hoverColor
+
 .container
     height: 91vh
     display: flex
     justify-content: center
     align-items: center
     overflow: hidden
-    
+
 .chooser
     display: grid
     justify-content: center
@@ -24,6 +31,13 @@
         justify-content: center
         align-items: center
         height: inherit
+
+.red
+    @include gradientAnimation(45deg, black, #EA2B1F)
+.blue
+    @include gradientAnimation(135deg, black, #0072BB)
+.green
+    @include gradientAnimation(-135deg, black, #8FC93A)
 
 .region
     flex-direction: column
@@ -58,3 +72,5 @@
             transform: rotate(-45deg)
             height: 30px
             width: 30px
+
+
