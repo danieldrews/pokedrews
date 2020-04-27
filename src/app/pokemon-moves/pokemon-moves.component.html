@@ -1,7 +1,5 @@
-<div class="container">
-    <div class="moves" *ngIf="moves" [ngClass]="{'twoColumns': twoColumns}">
-        <div class="move" *ngFor="let move of moves; let i = index">
-            <app-pokemon-move [move]="move" [slot]="i"></app-pokemon-move>
-        </div>
+<div class="grid" *ngIf="moves" [ngClass]="{'twoColumns': twoColumns}">
+    <div *ngFor="let move of moves; let i = index">
+        <app-pokemon-move [move]="move" [slot]="i"></app-pokemon-move>
     </div>
 </div>

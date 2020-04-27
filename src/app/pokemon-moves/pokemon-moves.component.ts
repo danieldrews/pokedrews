@@ -5,15 +5,9 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
   templateUrl: './pokemon-moves.component.html',
   styleUrls: ['./pokemon-moves.component.sass']
 })
-export class PokemonMovesComponent implements OnChanges {
+export class PokemonMovesComponent {
 
   @Input() moves: Array<any>
-  @Input() slot: number
   @Input() twoColumns = false
   
-  ngOnChanges(changes: SimpleChanges): void {
-    let moves = changes['moves']
-    if(moves) this.moves = moves.currentValue
-  }
-
 }
