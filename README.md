@@ -28,3 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Local server
 http-server -p 8080 -c-1 dist/pokedrews
+
+##docs build
+ng build --prod --output-path docs --base-href /pokedrews/

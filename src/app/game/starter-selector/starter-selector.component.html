@@ -2,27 +2,28 @@
     <div class="chooser">
         <div class="quad blue">
             <div class="quad__content">
-                
-                <img src="{{selectedGen.starters[2].imgUrl}}" (click)="choose(selectedGen.starters[2])">
+                <img class="quad__image" src="{{selectedGen.starters[2].imgUrl}}" (click)="choose(selectedGen.starters[2])">
             </div>
         </div>
         <div class="quad green">
             <div class="quad__content">
-                <img [src]="selectedGen.starters[0].imgUrl" (click)="choose(selectedGen.starters[0])">
+                <img class="quad__image" [src]="selectedGen.starters[0].imgUrl" (click)="choose(selectedGen.starters[0])">
             </div>
         </div>
         <div class="quad red">
             <div class="quad__content">
-                <img [src]="selectedGen.starters[1].imgUrl" (click)="choose(selectedGen.starters[1])">
+                <img class="quad__image" [src]="selectedGen.starters[1].imgUrl" (click)="choose(selectedGen.starters[1])">
             </div>
         </div>
         <div class="quad">
             <div class="quad__content region">
-                <span class="region__name region__down">{{selectedGen.name}}</span>
-                <span class="region__down">REGION</span>
-                <div class="region__action region__down">
-                    <fa-icon [icon]="faArrowUp" (click)="changeRegion(true)"></fa-icon>
-                    <fa-icon [icon]="faArrowDown" (click)="changeRegion()"></fa-icon>
+                <div class="region__content">
+                    <span class="region__name">{{selectedGen.name}}</span>
+                    <span>REGION</span>
+                    <div class="region__action">
+                        <fa-icon [icon]="faArrowUp" (click)="changeRegion(true)"></fa-icon>
+                        <fa-icon [icon]="faArrowDown" (click)="changeRegion()"></fa-icon>
+                    </div>
                 </div>
                 <div class="region__pokeball">
                     <img src="assets/images/pokeball_512.png" alt="pokeball">

@@ -1,26 +1,19 @@
 @import "../../../colors.sass"
 
-@mixin gradientAnimation($angle, $baseColor, $hoverColor)
-    background: linear-gradient($angle, $baseColor, transparent)
-    background-color: $baseColor
-    transition: .3s ease-in-out
-    &:hover
-        background-color: $hoverColor
-
 .container
     height: 91vh
     display: flex
     justify-content: center
     align-items: center
     overflow: hidden
+    color: $gray-light
 
 .chooser
+    $squareSize: 140px
     display: grid
-    justify-content: center
-    align-items: center
-    grid-template-columns: repeat(2, 150px)
-    grid-template-rows: repeat(2, 150px)
-    background: #000
+    grid-template-columns: repeat(2, $squareSize)
+    grid-template-rows: repeat(2, $squareSize)
+    background: $smoke-black
     transform: rotate(45deg)
 
 .quad
@@ -31,20 +24,16 @@
         justify-content: center
         align-items: center
         height: inherit
-
-.red
-    @include gradientAnimation(45deg, black, #EA2B1F)
-.blue
-    @include gradientAnimation(135deg, black, #0072BB)
-.green
-    @include gradientAnimation(-135deg, black, #8FC93A)
+    &__image
+        transform: scale(0.9)
 
 .region
     flex-direction: column
     justify-content: flex-end
-    color: #ccc
-    font-size: 1rem
-    &__down
+    &__content
+        display: flex
+        flex-direction: column
+        align-items: center
         position: relative
         top: 10px
     &__name
@@ -53,16 +42,9 @@
         font-weight: 700
     &__action
         z-index: 10
-        width: 100%
-        top: 15px
-        display: flex
-        justify-content: space-evenly
         fa-icon
             cursor: pointer
-            padding: 0 5px
-            &:hover
-                transform: scale(1.5)
-                color: $chinese-yellow
+            padding: 0 15px
     &__pokeball
         background: #fff
         transform: rotate(45deg)
@@ -70,7 +52,23 @@
         padding: 5px
         img
             transform: rotate(-45deg)
-            height: 30px
-            width: 30px
+            height: inherit
 
+@mixin gradientAnimation($angle, $baseColor, $hoverColor)
+    background: linear-gradient($angle, $baseColor, transparent)
+    background-color: $baseColor
+    transition: .3s ease-in-out
+    &:hover
+        background-color: $hoverColor
 
+@media(hover: hover) and (pointer: fine)
+    .region__action
+        fa-icon:hover
+            transform: scale(1.5)
+            color: $chinese-yellow
+    .red
+        @include gradientAnimation(45deg, $smoke-black, $fire-light)
+    .blue
+        @include gradientAnimation(135deg, $smoke-black, $water-light)
+    .green
+        @include gradientAnimation(-135deg, $smoke-black, $grass-light)
